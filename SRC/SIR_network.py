@@ -17,7 +17,7 @@ def run_network(Graph, beta, gamma, node_status):
                 contact = np.random.randint(0, len_neig-1)
             else:
                 contact = 0
-            if node_status[node] == 0 and node_status[neighbors[contact]]:
+            if node_status[node] == 0 and node_status[neighbors[contact]]==1:
                 if p < beta:
                     new_status[node] = 1
 
