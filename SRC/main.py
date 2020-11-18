@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 from math import floor
 from SIR_network import network_model
-import argparse
 import matplotlib.pyplot as plt
 
 def initial_node(G, init):
@@ -114,18 +113,11 @@ def test_start_time_greedyE(g, beta, gamma, init, maxt, assigned):
     return
 
 if __name__ == "__main__":
-    """
-    parser = argparse.ArgumentParser(description='Parse the command line for different demo')
-    parser.add_argument("-budget", type=int, help="test different rewiring budgets")
-    parser.add_argument("-start ", type=int, help="test effect of starting time")
-    parser.add_argument("-rewire", type=str, help="test different rewiring budgets", choices=["Greedy", "Greedy_Eigen",
-                                                                                              "do_nothing"])
-    """
 
     g = nx.read_edgelist("ia-enron-only.mtx", nodetype=int)
     init = [0.99, 0.1, 0]
-    beta = 0.1/24
-    gamma = 0.2/24
+    beta = 0.2/24
+    gamma = 0.07/24
     maxt = 50*24
     assign = initial_node(g, init)
 
