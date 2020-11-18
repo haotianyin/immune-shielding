@@ -115,7 +115,7 @@ def test_start_time_greedyE(g, beta, gamma, init, maxt, assigned):
 if __name__ == "__main__":
 
     g = nx.read_edgelist("ia-enron-only.mtx", nodetype=int)
-    init = [0.99, 0.1, 0]
+    init = [0.99, 0.01, 0]
     beta = 0.2/24
     gamma = 0.07/24
     maxt = 50*24
