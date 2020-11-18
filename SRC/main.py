@@ -116,9 +116,9 @@ if __name__ == "__main__":
 
     g = nx.read_edgelist("ia-enron-only.mtx", nodetype=int)
     init = [0.95, 0.05, 0]
-    beta = 0.2
-    gamma = 0.07
-    maxt = 100
+    beta = 0.2 / 24
+    gamma = 0.07 / 24
+    maxt = 50 *24
     assign = initial_node(g, init)
 
     test_budget_greedy(g, beta, gamma, init, maxt, assign)
