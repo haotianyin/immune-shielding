@@ -62,7 +62,7 @@ def network_model(Graph, beta, gamma, init, max_time, assigned, budget=None, rew
             if rewire is not None:
                 if start_t is not None and i >= start_t:
                     G = rewire_func(G, node_status_tmp, budget)
-                else:
+                elif start_t is None:
                     G = rewire_func(G, node_status_tmp, budget)
             S.append(S_new)
             I.append(I_new)
